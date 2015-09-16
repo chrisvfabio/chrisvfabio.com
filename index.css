@@ -1,0 +1,339 @@
+@import url(https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500);
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700);
+/*
+  Light 300
+  Normal 400
+  Medium 500
+  Semi-Bold 600
+  Bold 700
+*/
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  background-color: #4a4a4a;
+}
+h1, h2, h3 {
+  margin: 0;
+}
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.theme {
+  color: #00BCD4;
+}
+header {
+  background-color: #4a4a4a;
+  height: 448px;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+header h1 {
+  font-weight: 600;
+  font-size: 64px;
+  text-align: center;
+  margin-top: 10%;
+}
+header h2 {
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;
+}
+header input[type=button] {
+  padding: 16px 52px;
+  background-color: #00BCD4;
+  display: block;
+  margin: 96px auto;
+  border: none;
+  color: #fff;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.content {
+  background-color: white;
+  margin-top: 448px;
+  z-index: 2;
+}
+section {
+  padding: 64px 0;
+}
+section .container h2 {
+  font-weight: 700;
+  font-size: 36px;
+  text-align: center;
+  color: #00BCD4;
+  text-transform: uppercase;
+}
+section h3 {
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 8px;
+  text-align: center;
+  font-family: "RobotoDraft", "Arial", sans-serif;
+}
+.tile-container {
+  display:block;
+  margin-top: 32px;
+  padding: 16px;
+  height: auto;
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row;
+  flex-wrap: wrap;
+  line-height: 200px;
+  list-style: none;
+  justify-content: center;
+  overflow: hidden;
+}
+.tile {
+  min-width: 200px;
+  max-width: 200px;
+  height: 200px;
+  margin: 12px;
+  background-color: #fff;
+  flex: 1 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.tile-faces {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  background-color: #fff;
+  /*height: 192px;*/=
+}
+.tile.small img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -212px;
+}
+.tile.large img {
+  background-color: blue;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -212px;
+}
+.tile.large {
+  min-width: 424px;
+  max-width: 424px;
+}
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+	top: 0;
+	left: 0;
+  right: 0;
+}
+.front {
+  background-color: black;
+  z-index: 2;
+  transform: rotateY(0deg);
+  /*transition: all ease .5s;*/
+}
+.dark {
+  background-color: #4a4a4a;
+  color: #fff;
+}
+.back {
+  background-color: #fff;
+  transform: rotateY(180deg);
+  padding: 8px;
+}
+.tile-shadow {
+  box-shadow: 0px 1px 2px 0px #4a4a4a;
+}
+.tile:hover .tile-faces, .flip {
+  transform: rotateY(180deg);
+}
+.tile-faces .back {
+  color: #4a4a4a;
+  line-height: normal;
+  font-family: "RobotoDraft", "Arial", sans-serif;
+}
+.tile.large .tile-faces .back h2 a {
+  color: #00BCD4;
+  font-weight: 800;
+  font-size: 24px;
+  text-transform: none;
+}
+.tile-faces .back ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.tile.large .tile-faces .back ul li {
+  display: inline-block;
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  font-size: 14px;
+  border: 1px solid #4a4a4a;
+  font-weight: 500;
+  padding: 4px;
+  margin: 4px 4px;
+}
+.tile.small .tile-faces .back p {
+  font-size: 14px;
+  margin: 4px 0 4px 0;
+}
+.tile.small .tile-faces .back h2 {
+  margin: 8px;
+  padding: 0;
+  font-size: 18px;
+}
+.tile.small .tile-faces .back h2 a {
+  color: #00BCD4;
+  font-weight: 800;
+  text-transform: none;
+}
+.tile.small .tile-faces .back ul li {
+  display: inline-block;
+  font-size: 14px;
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  border: 1px solid #4a4a4a;
+  font-weight: 500;
+  padding: 4px;
+  margin: 2px 2px;
+}
+
+@media (max-width: 768px) {
+  .tile.small,
+  .tile.large {
+    margin: 6px;
+  }
+  .tile-container {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 448px) {
+  .tile.small,
+  .tile.large {
+    min-width: 100%;
+    width: 100%;
+  }
+}
+
+form {
+  margin: 32px auto;
+  /*border: 2px solid red;*/
+  max-width: 460px;
+  padding: 8px;
+  font-family: "RobotoDraft", "Arial", sans-serif;
+}
+form span.br {
+  margin-top: 16px;
+}
+form p {
+  margin: 0;
+}
+form input[type="text"],
+form textarea {
+  position: relative;
+  width: calc(100% - 16px) ;
+  margin: 16px 0;
+  padding: 8px;
+  border: none;
+  height: 24px;
+  font-size: 16px;
+  opacity: .7;
+  transition: opacity ease .5s;
+}
+form input[type="submit"] {
+  position: relative;
+  width: 100%;
+  margin: 16px 0;
+  padding: 16px 8px;
+  border: none;
+
+  font-size: 18px;
+  letter-spacing: .5px;
+  /*opacity: .7;*/
+  transition: all ease .5s;
+  background-color: #00BCD4;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+form input[type="submit"]:hover {
+  background-color: #0097A7;
+  outline: 0;
+}
+form textarea {
+  min-height: 160px;
+  max-height: 160px;
+  resize: vertical;
+}
+form input[type="text"]:focus,
+form input[type="text"]:hover,
+form textarea:focus,
+form textarea:hover {
+  opacity: 1;
+  outline: none;
+  /*border: 2px solid #00BCD4;*/
+}
+body section:last-child {
+  padding-bottom: 16px;
+}
+body section:last-child small {
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  font-family: "RobotoDraft", "Arial", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+.reading {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "RobotoDraft", "Arial", sans-serif;
+}
+
+.contact {
+  outline: none;
+}
+
+#skills {
+  position: relative;
+}
+.skills {
+  width: 100%;
+  height: 100%;
+}
+.skill {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.circle {
+  position: absolute;
+  width:100%;
+  height:100%;
+  background-color: red;
+  box-shadow: inset 0px 0px 1px yellow;
+  backface-visibility: hidden;
+}
+.skill .circle:nth-child(2) {
+  background-color: blue;
+  border-radius: 40px;
+  clip-path: inset(40px 20px 40px 40px);
+}
